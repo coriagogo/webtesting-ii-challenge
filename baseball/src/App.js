@@ -26,6 +26,55 @@ class App extends React.Component {
     )
   }
 
+  hit = () => {
+    this.setState({
+      balls: 0,
+      strikes: 0,
+      fouls: 0,
+    });
+  };
+
+  strike = () => {
+    if (this.state.strikes >= 2) {
+      this.setState({
+        balls: 0,
+        strikes: 0,
+        fouls: 0,
+      });
+    } else {
+      this.setState(prevState => {
+        return {
+          strikes: prevState.strikes + 1
+        };
+      });
+    }
+  };
+  
+  foul = () => {
+    if (this.state.strikes < 2) {
+      this.setState(prevState => {
+        return {
+          strikes: prevState.strikes + 1
+        };
+      });
+    };
+  }
+
+  ball = () => {
+    if (this.state.balls >= 3) {
+      this.setState({
+        balls: 0,
+        strikes: 0,
+        fouls: 0,
+      });
+    } else {
+      this.setState(prevState => {
+        return {
+          balls: prevState.balls + 1
+        };
+      });
+    };
+  }
 
 }
 
