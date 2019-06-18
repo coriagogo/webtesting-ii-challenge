@@ -1,7 +1,7 @@
 import React from 'react';
 
 const Display = props => {
-  const { balls, strikes } = props
+  // const { balls, strikes } = props
   return (
     <div>
       <h2>Balls: {props.balls}</h2>
